@@ -1,7 +1,7 @@
 # 🛍️ Motifnesia
 
 <p align="center">
-  <b>Modern E-Commerce Website for Indonesian Batik</b><br>
+  <strong>Modern E-Commerce Website for Indonesian Batik</strong><br>
   Academic Team Project - Telkom University
 </p>
 
@@ -9,26 +9,32 @@
 
 ## 📖 Overview
 
-Motifnesia is a web-based e-commerce platform developed to promote and simplify the online purchase of Indonesian batik products. The system provides a modern shopping experience for customers while helping local batik businesses expand their market digitally.
+Motifnesia is a web-based e-commerce platform developed to support the digital marketing and sales of Indonesian batik products. The system provides a modern online shopping experience for customers while helping local batik businesses expand their market through digital transformation.
+
+This project was developed as an academic team project using Laravel and MySQL.
 
 ---
 
 ## ✨ Features
 
-### 👤 Customer
-- User Registration & Login
+### 👤 Customer Features
+
+- User Registration
+- Login & Logout
+- Forgot Password
+- User Profile Management
 - Product Catalog
 - Product Detail
-- Search & Filter Products
+- Product Search
 - Wishlist
 - Shopping Cart
 - Checkout
 - Order History
-- Profile Management
 
-### 👨‍💼 Admin
+### 👨‍💼 Admin Features
+
 - Dashboard
-- Product Management (CRUD)
+- Product Management
 - Category Management
 - Order Management
 - Customer Management
@@ -40,13 +46,14 @@ Motifnesia is a web-based e-commerce platform developed to promote and simplify 
 
 | Technology | Description |
 |------------|-------------|
-| Laravel | Backend Framework |
-| PHP | Server-side Language |
+| Laravel | PHP Framework |
+| PHP | Backend Programming |
 | MySQL | Database |
-| Blade | Frontend Template |
-| Tailwind CSS | Styling |
-| JavaScript | Interactive UI |
+| Blade | Template Engine |
+| Tailwind CSS | UI Framework |
+| JavaScript | Frontend Interaction |
 | Vite | Asset Bundler |
+| Katalon Studio | Black Box Testing |
 
 ---
 
@@ -68,7 +75,7 @@ tests/
 
 ## 🚀 Installation
 
-Clone this repository
+Clone repository
 
 ```bash
 git clone https://github.com/Khuzaivan/Motifnesia.git
@@ -84,7 +91,7 @@ composer install
 npm install
 ```
 
-Copy environment
+Copy environment file
 
 ```bash
 cp .env.example .env
@@ -96,13 +103,13 @@ Generate application key
 php artisan key:generate
 ```
 
-Run migration
+Configure your database in `.env`, then run
 
 ```bash
 php artisan migrate
 ```
 
-Run server
+Start development server
 
 ```bash
 php artisan serve
@@ -110,50 +117,61 @@ php artisan serve
 
 ---
 
-## 📸 Screenshots
+## 👨‍💻 My Contributions
 
-> Screenshots will be added soon.
+As one of the backend developers in this academic team project, my main responsibilities included:
 
-- Home
-- Product Detail
-- Shopping Cart
-- Checkout
-- Dashboard Admin
+- Designed and managed the MySQL database structure.
+- Developed the Authentication module (Login, Register, Logout, and Forgot Password).
+- Implemented User Profile management features.
+- Developed Shopping Cart functionality.
+- Participated in backend feature development using Laravel.
+- Integrated application features with the database.
+- Conducted Black Box Testing using Katalon Studio.
+- Assisted in project documentation and presentation.
 
 ---
 
-## 👥 Team Project
-
-This project was developed as an academic team project for the Web Programming course at Telkom University.
-
-### Team Members
+## 👥 Team Members
 
 - Khuzaivan Ryandiezca
 - Muhammad Abyaz Zaydan
 
 ---
 
-## 👨‍💻 My Contributions
+## 📸 Screenshots
 
-My responsibilities in this project include:
+> Screenshots will be added soon.
 
-- Database Design
-- Backend Development (Laravel)
-- Authentication Module
-- Product Management
-- Black Box Testing
-- System Documentation
+- Homepage
+- Login
+- Product Detail
+- Shopping Cart
+- Checkout
+- Admin Dashboard
 
 ---
 
-## 🎯 Project Status
+## 📊 Project Highlights
 
-✅ Completed as Academic Project
+- Laravel-based E-Commerce Website
+- MySQL Database Integration
+- Authentication & Authorization
+- Responsive User Interface
+- Shopping Cart & Checkout System
+- Black Box Testing with Katalon Studio
+- Academic Team Project
 
-Currently being improved for portfolio purposes.
+---
+
+## 📌 Project Status
+
+✅ Completed as an Academic Team Project.
+
+Currently being improved as a portfolio project.
 
 ---
 
 ## 📄 License
 
-This project is developed for educational purposes.
+This project was developed for educational purposes.

@@ -1,0 +1,86 @@
+/* ======================================= */
+/* Struktur Halaman Utama */
+/* ======================================= */
+.favorites-page-container {
+    max-width: 700px; 
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.favorites-page-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.favorites-list-wrapper {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================= */
+/* Item Produk (.favorite-item-card) */
+/* ======================================= */
+.favorite-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0; /* Garis pemisah antar item */
+}
+
+/* Hilangkan border bawah di item terakhir */
+.favorites-list-wrapper .favorite-item-card:last-child {
+    border-bottom: none;
+}
+
+.product-details-favorite {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-thumb-fav {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.product-info-fav {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name-fav {
+    font-weight: 500;
+    font-size: 1em;
+    margin: 0;
+}
+
+.product-price-fav {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #cc3333; /* Warna merah untuk harga */
+    margin: 0;
+}
+
+/* ======================================= */
+/* Tombol Hapus (Ikon Trash) */
+/* ======================================= */
+.remove-fav-btn {
+    background: none;
+    border: none;
+    color: #cc3333; /* Ikon merah */
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2em;
+    transition: color 0.2s;
+}
+
+.remove-fav-btn:hover {
+    color: #a00;
+}

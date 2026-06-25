@@ -1,0 +1,160 @@
+/* ======================================= */
+/* Struktur Halaman Utama */
+/* ======================================= */
+.edit-profile-container {
+    padding: 40px 0;
+}
+
+.edit-profile-card {
+    max-width: 600px; /* Lebar kontainer utama */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.edit-profile-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* ======================================= */
+/* Formulir dan Input */
+/* ======================================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Agar padding tidak menambah lebar */
+}
+
+/* Input untuk Tanggal (Agar ikon kalender terlihat) */
+.form-control[type="date"] {
+    position: relative;
+    /* Optional: jika perlu styling spesifik browser */
+}
+
+/* ======================================= */
+/* Foto Profil (File Upload) */
+/* ======================================= */
+.photo-upload-group .photo-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+.file-input-label {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    border-right: 1px solid #ccc;
+    white-space: nowrap; /* Mencegah teks "Choose File" pecah */
+}
+
+.file-name-display {
+    padding: 12px 15px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ======================================= */
+/* Bagian Alamat */
+/* ======================================= */
+.address-section {
+    margin-top: 30px;
+}
+
+.address-title, .address-saved-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.btn-add-address {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 20px;
+}
+
+.btn-add-address:hover {
+    background-color: #f0f0f0;
+}
+
+/* ======================================= */
+/* Tombol Aksi */
+/* ======================================= */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 40px; /* Jarak sebelum Alamat Tersimpan */
+}
+
+.btn-submit {
+    background-color: #007bff; /* Warna biru */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.btn-close {
+    background-color: #6c757d; /* Warna abu-abu */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-close:hover {
+    background-color: #5a6268;
+}

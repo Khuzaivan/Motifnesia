@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #faf8f7;
+  color: #333;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: center;
+}
+
+/* NOTE: jangan pakai .container karena bentrok Bootstrap */
+.page-container {
+  display: flex;
+  justify-content: space-between; /* kalau mau space-between ganti */
+  gap: 2rem;
+  width: 90%;
+  margin: 2rem auto;
+  align-items: flex-start;
+}
+
+/* Sidebar (aside di kiri) */
+aside {
+  flex: 1;
+  max-width: 260px;
+  /* background-color: #fff; Removed for Tailwind dark mode */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+}
+
+aside h3 {
+  margin-bottom: 1rem;
+  /* color: #333; Removed for Tailwind */
+  font-size: 16px;
+  font-weight: 600;
+  /* border-bottom: 2px solid #D2691E; Removed for Tailwind */
+  padding-bottom: 8px;
+}
+
+/* Filter Group */
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #D2691E;
+}
+
+.filter-btn {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #D2691E;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+.filter-btn:hover {
+  background-color: #A0522D;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(210, 105, 30, 0.3);
+}
+
+/* Price Range Filter */
+.price-range {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.price-option input[type="radio"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #D2691E;
+}
+
+.price-option label {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+}
+
+.price-option:hover label {
+  color: #D2691E;
+}
+
+/* Clear Filter Button */
+.clear-filter-btn {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  text-align: center;
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.clear-filter-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+/* Product Section (kanan) */
+.product-grid { 
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+  width: 100%;
+  height: 160px;
+  background-color: #e5d3b3;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-price {
+  font-size: 0.9rem;
+  color: #5c4033;
+  font-weight: 500;
+}
+
+.product-discount {
+  font-size: 0.8rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.product-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.4rem;
+}
+
+/* slideshow wrapper — full width section */
+.slideshow-wrapper {
+  width: 90%;
+  margin: 2rem auto 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* Product image styling: ensure consistent aspect ratio and cover behavior */
+.product-card img,
+.product-card .product-img {
+  width: 100%;
+  height: 260px; /* fixed visual size to match slideshow */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 0 12px 0;
+}
+
+.product-card h3 {
+  font-size: 1.05rem;
+  margin: 6px 0 4px 0;
+  color: #1a5db8; /* blue link-style like screenshot */
+  text-decoration: underline;
+}
+
+.product-card p {
+  margin: 0;
+}
+
+.product-link { text-decoration: none; color: inherit; }
+
+/* Product Rating */
+.product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.product-rating .stars {
+  display: flex;
+  gap: 2px;
+}
+
+.product-rating .star {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.product-rating .star.filled {
+  color: #FFD700;
+}
+
+.product-rating .star.half {
+  background: linear-gradient(90deg, #FFD700 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-rating .rating-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #D2691E;
+  font-size: 16px;
+}
+
+.slideshow {
+  height: 260px;
+  /* Warna sesuai screenshot: gradien cokelat muda */
+  background: linear-gradient(135deg, #e5d3b3, #f0e0ca); 
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5c4033;
+  font-size: 1.6rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #e4e4e4;
+}
+
+/* Responsive tweak */
+@media (max-width: 900px) {
+  .page-container {
+    flex-direction: column;
+    width: 95%;
+    gap: 1rem;
+  }
+
+  aside {
+    max-width: 100%;
+  }
+}

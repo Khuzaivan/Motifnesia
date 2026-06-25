@@ -1,0 +1,168 @@
+/* ======================================= */
+/* Struktur Modal Umum */
+/* ======================================= */
+.custom-modal {
+    display: none; /* <--- INI WAJIB ADA */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Background gelap transparan */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Jarak dari atas */
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%; /* Lebar default */
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content.modal-sm {
+    max-width: 450px; /* Untuk modal ulasan yang lebih kecil */
+}
+
+.modal-header {
+    padding: 15px 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* ======================================= */
+/* Riwayat Pembelian (Modal 1) */
+/* ======================================= */
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.product-thumb-hist {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.product-name-hist {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.btn-review {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-ulasan {
+    background-color: #ffcc33; /* Kuning */
+    color: #333;
+}
+
+.btn-view-ulasan {
+    background-color: #6c757d; /* Abu-abu */
+    color: white;
+}
+
+/* ======================================= */
+/* Modal Ulasan (Modal 2 & 3) */
+/* ======================================= */
+.review-form-body h3.review-product-name {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rating-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rating-section p {
+    margin-bottom: 5px;
+}
+
+.stars .fa-star {
+    font-size: 1.5em;
+    color: #ccc; /* Warna abu-abu default */
+}
+
+.stars .fa-star.checked {
+    color: #ffcc33; /* Kuning untuk rating */
+}
+
+.review-textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-footer {
+    text-align: right;
+    padding-top: 15px;
+}
+
+.btn-submit-review {
+    background-color: #007bff; /* Biru */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.view-review-text {
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-style: italic;
+    color: #555;
+}

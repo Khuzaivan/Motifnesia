@@ -1,0 +1,14 @@
+.slideshow {
+      height: 260px;
+      background: linear-gradient(135deg, #d2b48c, #f0e0ca);
+      border-radius: 10px;
+      margin: 2rem 0;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5c4033;
+      font-size: 1.6rem;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }

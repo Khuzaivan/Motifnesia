@@ -1,0 +1,127 @@
+/* ======================================= */
+/* Struktur Halaman Utama */
+/* ======================================= */
+.transaction-container {
+    max-width: 700px; /* Lebih ramping dari keranjang */
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.section-box {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.section-box h3, .section-box h4 {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ======================================= */
+/* Bagian Alamat */
+/* ======================================= */
+.address-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ======================================= */
+/* Produk Summary */
+/* ======================================= */
+.product-item-summary h4 {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.product-detail-inline {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.product-thumb-sm {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.product-info-sm p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* ======================================= */
+/* Pengiriman & Pembayaran Options */
+/* ======================================= */
+.shipping-option, .payment-option {
+    padding: 8px 0;
+}
+
+.shipping-option label, .payment-option label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.shipping-option input[type="radio"], 
+.payment-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.price-right {
+    font-weight: bold;
+}
+
+/* ======================================= */
+/* Rincian Belanja Summary */
+/* ======================================= */
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.summary-line.total-line {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-top: 10px;
+    border-top: 2px solid #333; /* Garis tebal pemisah */
+}
+
+/* ======================================= */
+/* Footer dan Tombol Bayar */
+/* ======================================= */
+.checkout-footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.btn-pay {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.btn-pay:hover {
+    background-color: #555;
+}

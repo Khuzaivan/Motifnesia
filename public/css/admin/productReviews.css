@@ -1,0 +1,374 @@
+/* Styling Utama Halaman */
+.product-reviews-container {
+    padding: 20px;
+    background-color: #f7f5ef;
+    min-height: 100vh;
+    border-top-left-radius: 20px;
+    margin-left: 20px;
+}
+
+/* Header dan Search Bar */
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.search-box {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #a89486;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search-button {
+    background-color: #a89486;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+/* Tabel Header */
+.data-table-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+    display: flex;
+    background-color: #a89486;
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.header-col {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Penyesuaian lebar kolom untuk Product Reviews */
+.product-image-col {
+    flex: 0.8;
+}
+
+.product-name-col {
+    flex: 2;
+}
+
+.rating-col {
+    flex: 1.5;
+}
+
+.total-reviews-col {
+    flex: 1;
+    text-align: center;
+}
+
+.actions-col {
+    flex: 1.2;
+    text-align: center;
+}
+
+/* Styling Card Product Review */
+.product-reviews-list {
+    padding: 0 20px 20px 20px;
+}
+
+.product-review-card {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    margin-top: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+/* Warna selang-seling */
+.odd-row {
+    background-color: #fff;
+}
+
+.even-row {
+    background-color: #fcf8e3;
+}
+
+.product-review-card:hover {
+    background-color: #f0e9d6;
+}
+
+.card-column {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333;
+}
+
+.card-column.product-image-col {
+    flex: 0.8;
+}
+
+.card-column.product-name-col {
+    flex: 2;
+}
+
+.card-column.rating-col {
+    flex: 1.5;
+}
+
+.card-column.total-reviews-col {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-column.actions-col {
+    flex: 1.2;
+    justify-content: center;
+}
+
+/* Product Image */
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Rating Display */
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
+    font-size: 16px;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+.star.half {
+    color: #ffc107;
+    opacity: 0.5;
+}
+
+.star.empty {
+    color: #ddd;
+}
+
+.rating-value {
+    font-weight: 600;
+    color: #666;
+    margin-left: 5px;
+}
+
+/* Dropdown Reviews */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-view-reviews {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-view-reviews:hover {
+    background-color: #5a6268;
+}
+
+.reviews-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 15px;
+    right: 0;
+}
+
+.reviews-dropdown-content.show {
+    display: block;
+}
+
+/* Review Item dalam Dropdown */
+.review-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.review-header strong {
+    color: #333;
+    font-size: 14px;
+}
+
+.review-header small {
+    color: #999;
+    font-size: 12px;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+}
+
+.review-comment {
+    margin-bottom: 8px;
+}
+
+.review-comment p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.review-order {
+    font-size: 12px;
+    color: #888;
+}
+
+.review-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+/* No Reviews Message */
+.no-reviews {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.no-reviews p {
+    font-size: 16px;
+}
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-section label {
+    font-weight: 600;
+    color: #4a4a4a;
+    font-size: 15px;
+}
+
+.filter-dropdown {
+    padding: 8px 15px;
+    border: 2px solid #a89486;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #4a4a4a;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.filter-dropdown:hover {
+    border-color: #8b6e5e;
+}
+
+.filter-dropdown:focus {
+    border-color: #8b6e5e;
+    box-shadow: 0 0 0 3px rgba(168, 148, 134, 0.1);
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffc107;
+    color: #333;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: none;
+    font-size: 15px;
+    font-weight: 500;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.toast-notification.show {
+    display: block;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Button untuk produk tanpa review */
+.btn-no-reviews {
+    opacity: 0.6;
+}
+
+.btn-no-reviews:hover {
+    opacity: 1;
+    background-color: #5a6268;
+}

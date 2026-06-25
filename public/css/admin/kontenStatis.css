@@ -1,0 +1,23 @@
+/* kontenStatis admin styles - matches screenshot beige tabs */
+body .konten-container { padding: 24px; }
+.tabs-header { background: #f2dfc9; padding: 12px; border-bottom: 4px solid #e4caa6; }
+.tab-btn { background: #e7caa6; border-radius: 10px; padding: 10px 18px; margin-right: 8px; border: none; cursor: pointer; color: #5a3e2b; font-weight: 700; }
+.tab-btn.active { background: #6b4334; color: #fff; }
+.tab-content { padding: 18px 0; }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+.section-block { margin: 18px 0; }
+.section-block h4 { margin-bottom: 8px; color: #333; }
+.preview { display:block; max-width:320px; margin: 8px 0; border-radius:6px; }
+.preview.small { max-width:160px; }
+.form-row { margin-bottom: 12px; }
+.form-row label { display:block; margin-bottom:6px; }
+.form-row input[type="text"], .form-row textarea { width:100%; padding:8px; border:1px solid #ddd; border-radius:6px; }
+.two-col { display:flex; gap:20px; }
+.two-col > div { flex:1; }
+.btn-save { background:#1976d2; color:white; padding:10px 16px; border:none; border-radius:6px; cursor:pointer; margin-top:10px; }
+.alert-success{ background:#dff0d8; color:#3c763d; padding:8px 12px; border-radius:6px; margin-bottom:12px; }
+
+@media (max-width:900px){
+    .two-col{flex-direction:column}
+}

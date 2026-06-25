@@ -1,0 +1,168 @@
+/* Styling Utama Halaman (Konsisten) */
+.add-product-container {
+    padding: 20px;
+    background-color: #f7f5ef;
+    min-height: 100vh;
+    border-top-left-radius: 20px;
+    margin-left: 20px;
+}
+
+/* Header dan Search Bar (Konsisten) */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+/* ... styling search box dan input disamakan dengan file CSS sebelumnya ... */
+
+/* --- Form Wrapper dan Layout --- */
+.product-form-wrapper {
+    background-color: #8b6e5e; /* Warna latar belakang cokelat tua di form */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.product-form {
+    display: flex;
+    gap: 30px; /* Jarak antar kolom */
+}
+
+/* Kolom Kiri: Input Form */
+.form-left {
+    flex: 2; /* Kolom kiri lebih besar */
+    display: grid;
+    /* Atur 2 kolom untuk input form */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 25px; /* Jarak baris dan kolom */
+}
+
+.form-left label {
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+    grid-column: span 1; /* Setiap label ambil 1 kolom */
+}
+
+.form-left input[type="text"],
+.form-left textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-top: -5px; /* Narik input agar dekat dengan label */
+}
+
+/* Biar Deskripsi dan Ukuran/Stok rata (Deskripsi ambil 2 kolom) */
+.form-left label[for="description"],
+.form-left textarea#description {
+    grid-column: span 2; /* Textarea Deskripsi ambil 2 kolom */
+}
+
+/* Kolom Kanan: Foto dan Aksi */
+.form-right {
+    flex: 1; /* Kolom kanan lebih kecil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.image-preview-box {
+    width: 100%;
+    /* Mengisi ruang yang setara dengan banyak input di kiri */
+    height: auto; 
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.product-image-preview {
+    width: 100%;
+    height: 350px; /* Atur tinggi gambar pratinjau */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.select-image-button {
+    background-color: #e6cfa8;
+    color: #5d4a3b;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-bottom: 20px; /* Jarak ke tombol Simpan */
+}
+
+.select-image-button:hover {
+    background-color: #d1b893;
+}
+
+.action-buttons-area {
+    width: 100%;
+    margin-top: 20px; /* Jarak dari area foto */
+}
+
+.save-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e6cfa8; /* Warna tombol Simpan */
+    color: #5d4a3b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.save-button:hover {
+    background-color: #d1b893;
+}
+
+
+        /* Ensure inputs/select/textarea in left column have same width */
+        .product-form .form-column.form-left input[type="text"],
+        .product-form .form-column.form-left input[type="number"],
+        .product-form .form-column.form-left select,
+        .product-form .form-column.form-left textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: #fff;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        /* Keep file preview and image sizing consistent */
+        .product-image-preview {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 6px;
+            background: #fff;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Align right column buttons */
+        .action-buttons-area .save-button { width: 100%; }

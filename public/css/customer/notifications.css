@@ -1,0 +1,365 @@
+/* Customer Notifications Page */
+
+.notifications-container {
+    max-width: 900px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+}
+
+/* Header */
+.notifications-header {
+    background: linear-gradient(135deg, #D2691E 0%, #A0522D 100%);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.btn-mark-all {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-mark-all:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Notifications List */
+.notifications-list {
+    background: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Notification Card */
+.notification-card {
+    display: flex;
+    gap: 15px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.notification-card:last-child {
+    border-bottom: none;
+}
+
+.notification-card:hover {
+    background: #fafafa;
+}
+
+.notification-card.unread {
+    background: #fffaf0;
+}
+
+.notification-card.unread:hover {
+    background: #fff5e6;
+}
+
+/* Icon */
+.notif-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.notif-icon.order {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.notif-icon.return {
+    background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+}
+
+.notif-icon.review {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+/* Content */
+.notif-content {
+    flex: 1;
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+.notif-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.notif-time {
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+}
+
+.notif-message {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+}
+
+/* Item Container (untuk produk retur) */
+.notif-item-container {
+    display: flex;
+    gap: 12px;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px 0;
+}
+
+.item-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 6px 0;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.status-pending {
+    background: #FFF3CD;
+    color: #856404;
+}
+
+.status-badge.status-disetujui {
+    background: #D4EDDA;
+    color: #155724;
+}
+
+.status-badge.status-ditolak {
+    background: #F8D7DA;
+    color: #721C24;
+}
+
+.status-badge.status-diproses {
+    background: #D1ECF1;
+    color: #0C5460;
+}
+
+.status-badge.status-selesai {
+    background: #D4EDDA;
+    color: #155724;
+}
+
+.item-reason {
+    font-size: 13px;
+    color: #666;
+}
+
+.item-refund {
+    font-size: 13px;
+    color: #4CAF50;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.item-note {
+    font-size: 12px;
+    color: #666;
+    background: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 6px 0 0 0;
+    border-left: 3px solid #D2691E;
+}
+
+/* Action Button */
+.notif-action-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #D2691E;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.notif-action-btn:hover {
+    background: #A0522D;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(210, 105, 30, 0.3);
+}
+
+/* Unread Indicator */
+.unread-indicator {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #FF5722;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(-50%) scale(1.2);
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+/* Pagination */
+.pagination-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notifications-container {
+        margin: 80px auto 20px;
+        padding: 0 15px;
+    }
+
+    .notifications-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .notifications-header h1 {
+        font-size: 20px;
+    }
+
+    .btn-mark-all {
+        width: 100%;
+    }
+
+    .notification-card {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .notif-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .notif-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .notif-title {
+        font-size: 15px;
+    }
+
+    .notif-item-container {
+        flex-direction: column;
+    }
+
+    .item-image {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notifications-header h1 {
+        font-size: 18px;
+    }
+
+    .notif-title {
+        font-size: 14px;
+    }
+
+    .notif-message {
+        font-size: 13px;
+    }
+}

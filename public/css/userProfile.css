@@ -1,0 +1,131 @@
+/* ======================================= */
+/* Struktur Halaman Utama */
+/* ======================================= */
+.profile-page-container {
+    padding: 40px 0;
+}
+
+.profile-card-wrapper {
+    max-width: 900px; /* Lebar card profil */
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    overflow: hidden; /* Penting untuk layout */
+}
+
+/* ======================================= */
+/* KOLOM KIRI (Sidebar) */
+/* ======================================= */
+.profile-sidebar {
+    width: 300px; /* Lebar kolom kiri */
+    padding: 30px;
+    background-color: #f7f7f7; /* Background abu-abu muda */
+    border-right: 1px solid #eee;
+    text-align: center;
+}
+
+.profile-avatar-section {
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.profile-username {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Tombol Aksi Sidebar */
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.btn-profile-action {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-edit, .btn-history {
+    background-color: #ffcc33; /* Warna Kuning/Gold */
+    color: #333;
+}
+
+.btn-logout {
+    background-color: #cc3333; /* Warna Merah */
+    color: white;
+    margin-top: 15px;
+}
+
+/* ======================================= */
+/* KOLOM KANAN (Main Content) */
+/* ======================================= */
+.profile-main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.data-section {
+    margin-bottom: 40px;
+}
+
+.section-title-underline {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ffcc33; /* Garis bawah kuning */
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.section-title-large {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.data-row {
+    display: flex;
+    /* Hanya menggunakan flexbox untuk tata letak, tidak untuk 2 kolom besar */
+    /* Karena di screenshot label dan value menyatu di 1 baris */
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.data-label {
+    font-weight: 500; /* Label seperti 'Nama Lengkap:' */
+    color: #333;
+    min-width: 120px; /* Jarak tetap untuk label */
+}
+
+.data-label-bold {
+    font-weight: 700; /* Label seperti 'Email:' (Kontak) */
+    color: #333;
+    min-width: 70px; 
+}
+
+.data-value {
+    font-weight: 400;
+    color: #555;
+    margin-left: 5px;
+}

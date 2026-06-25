@@ -1,0 +1,128 @@
+/* ======================================= */
+/* Struktur Halaman Utama */
+/* ======================================= */
+.payment-confirm-container {
+    max-width: 550px; /* Lebih ramping untuk halaman konfirmasi */
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.payment-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================= */
+/* Header (Timer & Tanggal) */
+/* ======================================= */
+.expiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fce4e4; /* Latar belakang merah muda */
+    border: 1px solid #f4c2c2;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.expiry-header .label {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.expiry-header .countdown {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #cc0000; /* Warna merah menyala */
+}
+
+.datetime {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.separator {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+/* ======================================= */
+/* Detail Pembayaran */
+/* ======================================= */
+.payment-details {
+    margin-bottom: 30px;
+}
+
+.method-title, .total-tagihan-title {
+    font-weight: 600;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.payment-number {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.total-tagihan-amount {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #cc3333; /* Warna merah untuk total tagihan */
+}
+
+/* ======================================= */
+/* Input & Tombol */
+/* ======================================= */
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.payment-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8; /* Background abu-abu muda */
+    font-size: 1em;
+    outline: none;
+}
+
+.button-section {
+    text-align: center;
+}
+
+.btn-confirm-pay {
+    width: 100%;
+    background-color: #999; /* Warna abu-abu pudar seperti di foto */
+    color: white;
+    border: none;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: not-allowed; /* Asumsi tombol disabled/belum aktif */
+    border-radius: 4px;
+}
+
+/* Jika kamu ingin tombolnya aktif: */
+/*
+.btn-confirm-pay {
+    background-color: #333;
+    cursor: pointer;
+}
+.btn-confirm-pay:hover {
+    background-color: #555;
+}
+*/

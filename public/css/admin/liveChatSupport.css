@@ -1,0 +1,202 @@
+/* Styling Utama Halaman */
+.live-chat-container {
+    padding: 20px;
+    background-color: #f7f5ef;
+    min-height: 100vh;
+    border-top-left-radius: 20px;
+    margin-left: 20px;
+}
+
+/* Header dan Search Bar (Konsisten) */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.search-box {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #a89486;
+}
+
+/* --- MAIN PANEL (List dan Content) --- */
+.chat-main-panel {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 70vh; /* Agar panel chat terlihat, bisa disesuaikan */
+}
+
+/* --- PANEL KIRI: CHAT LIST --- */
+.chat-list-panel {
+    width: 350px; /* Lebar sesuai perkiraan screenshot */
+    border-right: 1px solid #eee;
+    overflow-y: auto; /* Bisa di-scroll */
+}
+
+.chat-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #fcf8e3; /* Warna aktif/hover sesuai screenshot */
+}
+
+.chat-list-item:hover {
+    background-color: #f0e9d6;
+}
+
+.chat-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.chat-user-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #8b6e5e;
+}
+
+.chat-username {
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.chat-preview-text {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.chat-icon {
+    color: #8b6e5e;
+    font-size: 16px;
+}
+
+/* --- PANEL KANAN: CHAT CONTENT --- */
+.chat-content-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fcf8e3; /* Latar belakang chat, warna krem/putih tulang */
+}
+
+.chat-content-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chat-messages-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Styling Chat Bubble */
+.chat-bubble-wrapper {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 75%;
+}
+
+.chat-bubble {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 100%;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+    font-size: 14px;
+}
+
+.sender-icon {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+/* Styling untuk pesan dari User (kiri) */
+.bubble-user {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.bubble-user .chat-bubble {
+    background-color: #c7b5a8; /* Warna cokelat muda */
+    color: #fff;
+    order: 2; /* Agar bubble di kiri dan icon di kanan (User) */
+    margin-right: 5px;
+}
+
+.bubble-user .sender-icon {
+    order: 3;
+    visibility: hidden; /* Sembunyikan icon user di bubble user (sesuai screenshot) */
+}
+
+/* Styling untuk pesan dari Admin (kanan) */
+.bubble-admin {
+    justify-content: flex-end;
+    align-self: flex-end;
+    flex-direction: row-reverse; /* Balik urutan untuk rata kanan */
+}
+
+.bubble-admin .chat-bubble {
+    background-color: #f0f0f0; /* Warna lebih terang, putih/abu-abu muda */
+    color: #333;
+    order: 2; /* Bubble di kanan, icon di kiri (Admin) */
+    margin-left: 5px;
+}
+
+.bubble-admin .sender-icon {
+    order: 1;
+    visibility: hidden; /* Sembunyikan icon admin di bubble admin (sesuai screenshot) */
+}
+
+/* Perbaikan untuk mengikuti pola icon pada screenshot */
+/* Pada screenshot, icon Rosyadi (user) ada di KIRI, icon Staff ada di KANAN */
+.bubble-user {
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-direction: row; /* Icon kiri, bubble kanan */
+}
+.bubble-user .chat-bubble {
+    order: 2;
+    margin-left: 5px;
+}
+.bubble-user .sender-icon {
+    order: 1;
+    visibility: visible;
+}
+
+.bubble-admin {
+    justify-content: flex-end;
+    align-self: flex-end;
+    flex-direction: row-reverse; /* Icon kanan, bubble kiri */
+}
+.bubble-admin .chat-bubble {
+    order: 1;
+    margin-right: 5px;
+}
+.bubble-admin .sender-icon {
+    order: 2;
+    visibility: visible;
+}

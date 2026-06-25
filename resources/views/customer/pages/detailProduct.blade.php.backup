@@ -1,0 +1,245 @@
+@extends('customer.layouts.mainLayout')
+
+@section('container')
+    <div class="min-h-screen pt-20 px-8" style="background-color: #FFF8F0;">
+        {{-- WRAPPER UNTUK KONTEN UTAMA DETAIL PRODUK --}}
+        <div class="max-w-6xl mx-auto bg-white rounded-2xl p-8 mb-8" style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <div class="flex gap-8"> 
+                {{-- BAGIAN KIRI: GAMBAR PRODUK --}}
+                <div class="w-1/2 flex-shrink-0">
+                    <img src="{{ asset('images/' . $product['gambar']) }}" alt="{{ $product['nama'] }}" class="w-full h-auto rounded-xl" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                </div>
+
+                {{-- BAGIAN KANAN: INFORMASI PRODUK --}}
+                <div class="flex-1">
+                    <h1 class="text-3xl font-bold mb-4 text-gray-800">{{ $product['nama'] }}</h1>
+                    <p class="text-3xl font-bold mb-6" style="color: #8B4513;">Rp{{ number_format($product['harga'], 0, ',', '.') }}</p>
+
+                    <div class="space-y-2 mb-6 text-sm">
+                        <p><strong>Material:</strong> {{ $product['material'] ?? 'Sutra' }}</p>
+                        <p><strong>Proses:</strong> {{ $product['proses'] ?? 'print' }}</p>
+                        <p><strong>SKU:</strong> SKU0001</p>
+                        <p><strong>Kategori:</strong> {{ $product['kategori'] ?? 'wanita' }}</p>
+                        <p><strong>Tags:</strong> batik, pria</p>
+                    </div>
+
+                    <p class="font-semibold mb-3">Ukuran:</p>
+                    <div class="flex gap-3 mb-6">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="S" class="peer hidden">
+                            <div class="border-2 border-gray-300 rounded-lg px-4 py-2 peer-checked:border-orange-700 peer-checked:bg-orange-50 hover:border-gray-400 transition-colors">S</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="M" class="peer hidden">
+                            <div class="border-2 border-gray-300 rounded-lg px-4 py-2 peer-checked:border-orange-700 peer-checked:bg-orange-50 hover:border-gray-400 transition-colors">M</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="L" class="peer hidden">
+                            <div class="border-2 border-gray-300 rounded-lg px-4 py-2 peer-checked:border-orange-700 peer-checked:bg-orange-50 hover:border-gray-400 transition-colors">L</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="XL" class="peer hidden">
+                            <div class="border-2 border-gray-300 rounded-lg px-4 py-2 peer-checked:border-orange-700 peer-checked:bg-orange-50 hover:border-gray-400 transition-colors">XL</div>
+                        </label>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button type="button" id="btnAddToCart" class="flex-1 py-3 rounded-lg font-semibold text-white transition-colors" style="background-color: #8B4513; hover:background-color: #704010;">
+                            Tambahkan ke Keranjang
+                        </button>
+                        <button type="button" id="btnAddToFavorite" class="w-12 h-12 rounded-lg border-2 border-gray-300 flex items-center justify-center hover:border-pink-500 hover:bg-pink-50 transition-colors">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                        @push('scripts')
+                        <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Add to Cart
+                            document.getElementById('btnAddToCart').addEventListener('click', function() {
+                                const ukuran = document.querySelector('input[name="size"]:checked');
+                                if (!ukuran) {
+                                    alert('Pilih ukuran terlebih dahulu!');
+                                    return;
+                                }
+                                fetch("{{ route('customer.cart.add') }}", {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                    },
+                                    body: JSON.stringify({
+                                        product_id: {{ $product['id'] }},
+                                        ukuran: ukuran.value
+                                    })
+                                })
+                                .then(res => res.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        alert(data.message);
+                                        window.location.href = "{{ route('customer.cart.index') }}";
+                                    } else {
+                                        alert(data.message || 'Gagal menambah ke keranjang!');
+                                    }
+                                })
+                                .catch(() => alert('Terjadi kesalahan.'));
+                            });
+
+                            // Add to Favorite
+                            document.getElementById('btnAddToFavorite').addEventListener('click', function() {
+                                fetch("{{ route('customer.favorites.store') }}", {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                    },
+                                    body: JSON.stringify({
+                                        produk_id: {{ $product['id'] }}
+                                    })
+                                })
+                                .then(res => res.json())
+                                .then(data => {
+                                    alert(data.message);
+                                    if (data.success) {
+                                        // Bisa redirect ke favorite atau stay
+                                        // window.location.href = "{{ route('customer.favorites.index') }}";
+                                    }
+                                })
+                                .catch(() => alert('Terjadi kesalahan.'));
+                            });
+                        });
+                        </script>
+                        @endpush
+                    </div>
+                </div>
+
+                {{-- BAGIAN KANAN BAWAH: DESKRIPSI (di foto posisinya di kanan atas) --}}
+                <div class="product-description-section">
+                    <h2>Deskripsi</h2>
+                    <p>{{ $product['deskripsi'] }}</p>
+                    {{-- Tambahkan deskripsi sesuai foto --}}
+                    <p>Batik Mega Mendung khas daerah Indonesia</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        {{-- Tombol kembali yang kamu hapus sebelumnya, gue kembalikan biar navigasi enak --}}
+
+        <!-- Ulasan Pelanggan Section --}
+        <div class="max-w-6xl mx-auto bg-white rounded-2xl p-8 mb-8" style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <h2 class="text-2xl font-bold mb-6">Ulasan Pelanggan</h2>
+            
+            @if($reviews->count() > 0)
+                <div id="reviews-container" class="space-y-6">
+                    @foreach($reviews->take(3) as $review)
+                        <div class="review-item">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    @if($review->user->profile_photo ?? false)
+                                        <img src="{{ asset('images/' . $review->user->profile_photo) }}" alt="{{ $review->user->name }}" class="w-full h-full object-cover">
+                                    @else
+                                        <div class="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold">
+                                            {{ strtoupper(substr($review->user->name ?? 'U', 0, 1)) }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="font-bold">{{ $review->user->name ?? 'User' }}</h4>
+                                        <span class="text-xs text-gray-500">{{ $review->created_at->format('d M Y') }}</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <i class="fas fa-star text-xs {{ $i <= $review->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                        @endfor
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed ml-16">{{ $review->review_text }}</p>
+                        </div>
+                    @endforeach
+
+                    @if($reviews->count() > 3)
+                        <div class="hidden space-y-6" id="more-reviews">
+                            @foreach($reviews->skip(3) as $review)
+                                <div>
+                                    <div class="flex items-start gap-4 mb-3">
+                                        <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                            @if($review->user->profile_photo ?? false)
+                                                <img src="{{ asset('images/' . $review->user->profile_photo) }}" alt="{{ $review->user->name }}" class="w-full h-full object-cover">
+                                            @else
+                                                <div class="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold">
+                                                    {{ strtoupper(substr($review->user->name ?? 'U', 0, 1)) }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="font-bold">{{ $review->user->name ?? 'User' }}</h4>
+                                                <span class="text-xs text-gray-500">{{ $review->created_at->format('d M Y') }}</span>
+                                            </div>
+                                            <div class="flex items-center gap-1 mt-1">
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    <i class="fas fa-star text-xs {{ $i <= $review->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 text-sm leading-relaxed ml-16">{{ $review->review_text }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+
+                @if($reviews->count() > 3)
+                    <button id="load-more-btn" class="w-full mt-6 py-3 rounded-lg font-semibold text-white transition-colors" style="background-color: #8B4513;">
+                        Lihat Lebih Banyak
+                    </button>
+                    <button id="show-less-btn" class="hidden w-full mt-6 py-3 rounded-lg font-semibold text-white bg-gray-500 hover:bg-gray-600 transition-colors">
+                        Tampilkan Lebih Sedikit
+                    </button>
+                @endif
+            @else
+                <p class="text-gray-500 text-center py-4">Belum ada ulasan untuk produk ini.</p>
+            @endif
+        </div>
+
+        <!-- Produk Lainnya Section -->
+        @if($relatedProducts->count() > 0)
+            <div class="max-w-6xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold mb-6">Produk Lainnya</h2>
+                <div class="grid grid-cols-4 gap-6">
+                    @foreach($relatedProducts as $product)
+                        @include('customer.components.product-card', ['product' => $product])
+                    @endforeach
+                </div>
+            </div>
+        @endif
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const showLessBtn = document.getElementById('show-less-btn');
+        const moreReviews = document.getElementById('more-reviews');
+
+        if(loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                moreReviews.classList.remove('hidden');
+                loadMoreBtn.classList.add('hidden');
+                showLessBtn.classList.remove('hidden');
+            });
+        }
+
+        if(showLessBtn) {
+            showLessBtn.addEventListener('click', function() {
+                moreReviews.classList.add('hidden');
+                showLessBtn.classList.add('hidden');
+                loadMoreBtn.classList.remove('hidden');
+                document.getElementById('reviews-container').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    });
+</script>
+@endsection

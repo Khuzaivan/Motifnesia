@@ -1,0 +1,275 @@
+/* Styling Utama Halaman */
+.customer-list-container {
+    padding: 20px;
+    background-color: #f7f5ef; /* Latar belakang body agar tampilan menyatu */
+    min-height: 100vh; /* Agar layout penuh */
+    border-top-left-radius: 20px; /* Meniru lengkungan dari screenshot */
+    margin-left: 20px; /* Jarak dari sidebar */
+}
+
+/* Header dan Search Bar */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.search-box {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #a89486; /* Warna cokelat muda di foto */
+}
+
+.search-input {
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search-button {
+    background-color: #a89486;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+/* Alert Success */
+.alert {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Tabel Header */
+.data-table-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+    display: flex;
+    background-color: #a89486; /* Warna cokelat tua */
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.header-col {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.username-col {
+    flex: 1.5;
+}
+
+.fullname-col {
+    flex: 2;
+}
+
+.email-col {
+    flex: 2;
+}
+
+.products-col {
+    flex: 1;
+    text-align: center;
+}
+
+.actions-col {
+    flex: 2;
+    text-align: center;
+}
+
+/* Styling Card Pelanggan (dari customerCard.blade.php) */
+.customer-cards-list {
+    padding: 0 20px 20px 20px; /* Padding di sekitar list */
+}
+
+.customer-card {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    margin-top: 5px; /* Jarak antar baris */
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+/* Warna selang-seling */
+.odd-row {
+    background-color: #fff; /* Putih (row pertama) */
+}
+
+.even-row {
+    background-color: #fcf8e3; /* Kuning pucat/Krem (row kedua) */
+}
+
+.customer-card:hover {
+    background-color: #f0e9d6; /* Sedikit hover effect */
+}
+
+.card-column {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333;
+}
+
+.card-column.username-col {
+    flex: 1.5;
+}
+
+.card-column.fullname-col {
+    flex: 2;
+}
+
+.card-column.email-col {
+    flex: 2;
+}
+
+.card-column.products-col {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-column.actions-col {
+    flex: 2;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #8b6e5e; /* Warna icon user */
+    background-color: #ede2c9;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+/* Dropdown Detail Pesanan */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-detail {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-detail:hover {
+    background-color: #5a6268;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 350px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
+    right: 0;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.order-detail {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.order-detail strong {
+    color: #333;
+    font-size: 14px;
+}
+
+.order-detail small {
+    display: block;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.order-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.order-items-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #555;
+}
+
+.order-total {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+}
+
+/* Button Hapus */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* No Customers Message */
+.no-customers {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.no-customers p {
+    font-size: 16px;
+}

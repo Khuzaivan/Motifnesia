@@ -1,0 +1,148 @@
+/* ======================================= */
+/* Struktur Dasar Layout Detail Produk */
+/* ======================================= */
+.product-detail-container {
+    max-width: 1200px; /* Lebar maksimal halaman */
+    margin: 30px auto; /* Margin atas bawah dan tengah */
+    padding: 20px;
+}
+
+.product-detail {
+    display: flex;
+    gap: 40px; /* Jarak antara gambar dan info */
+    background-color: #fff; /* Latar belakang putih seperti di gambar */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sedikit bayangan */
+}
+
+/* ======================================= */
+/* Styling Gambar dan Info */
+/* ======================================= */
+.product-image-section {
+    flex: 1; /* Ambil proporsi 1 */
+    max-width: 450px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.product-info {
+    flex: 2; /* Ambil proporsi 2 (lebih lebar) */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi kolom info dan deskripsi */
+    gap: 30px;
+}
+
+/* ======================================= */
+/* Styling Teks dan Harga */
+/* ======================================= */
+.product-info h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: #cc3333; /* Warna merah untuk harga */
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+/* ======================================= */
+/* Styling Ukuran (Radio Buttons) */
+/* ======================================= */
+.size-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.size-options label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 50%; /* Membuat kotak ukuran menjadi bulat/oval */
+    text-align: center;
+    width: 35px; /* Lebar tetap untuk lingkaran */
+    height: 35px; /* Tinggi tetap untuk lingkaran */
+    line-height: 25px; /* Untuk penempatan teks di tengah */
+}
+
+.size-options input[type="radio"] {
+    display: none; /* Sembunyikan radio button asli */
+}
+
+/* Efek saat dipilih */
+.size-options input[type="radio"]:checked + label {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+/* ======================================= */
+/* Styling Tombol Aksi */
+/* ======================================= */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cart {
+    background-color: #5cb85c; /* Warna hijau */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-cart:hover {
+    background-color: #4cae4c;
+}
+
+.btn-wishlist {
+    background-color: #dc3545; /* Warna merah (untuk hati) */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-wishlist:hover {
+    background-color: #c82333;
+}
+
+.btn-wishlist i {
+    font-size: 1.2em;
+}
+
+/* Styling Deskripsi */
+.product-description-section {
+    grid-column: 2 / 3; /* Menempatkan di kolom kedua */
+    /* Bisa juga ditempatkan di bawah, tergantung layout aslinya */
+}
+.product-description-section h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
